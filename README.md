@@ -1,37 +1,56 @@
 # Inventory Service API
 
-A backend REST API built using FastAPI and PostgreSQL for managing inventory.
+A RESTful backend API for managing inventory items, built using FastAPI and PostgreSQL with JWT-based authentication.
 
-## Features
+---
 
-- Create items
-- View all items
-- Update item quantity
-- Delete items
-- Identify low-stock items
+## 🚀 Live Demo
+https://web-production-70eb8.up.railway.app/docs
 
-## Tech Stack
+---
+
+## 🧠 Features
+
+- User registration and login (JWT authentication)
+- Protected API endpoints
+- Create, read, update, and delete inventory items
+- Low stock detection endpoint
+- PostgreSQL database integration
+- Deployed on Railway
+
+---
+
+## 🛠 Tech Stack
 
 - Python
 - FastAPI
 - PostgreSQL
 - SQLAlchemy
+- JWT Authentication
+- Uvicorn
+- Railway (deployment)
 
-## How to Run
+---
 
-1. Install dependencies:
-   pip install -r requirements.txt
+## 📌 API Endpoints
 
-2. Run the server:
-   python -m uvicorn main:app --reload
+### Auth
+- POST `/register` — Register new user
+- POST `/login` — Login and receive token
 
-3. Open API docs:
-   http://127.0.0.1:8000/docs
+### Inventory
+- GET `/items/` — Get all items
+- POST `/items/` — Create item
+- PUT `/items/{item_id}` — Update quantity
+- DELETE `/items/{item_id}` — Delete item
+- GET `/items/low-stock/` — Get low stock items
 
-## Example Endpoints
+---
 
-- POST /items/
-- GET /items/
-- PUT /items/{item_id}
-- DELETE /items/{item_id}
-- GET /items/low-stock/
+## ⚙️ Running Locally
+
+```bash
+git clone https://github.com/ashar-naveed/inventory-service-api
+cd inventory-service-api
+pip install -r requirements.txt
+uvicorn main:app --reload
